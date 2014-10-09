@@ -1,0 +1,32 @@
+.modal#payment_modal.fade
+  .modal-dialog
+    .modal-content
+      = form_tag Paysto.urls[:payment], method: :post do
+        .modal-header
+          %h4.modal-title.clearfix
+            .pull-left Check your purchase
+            .pull-right
+              %a.gray{href: 'javascript://', 'data-dismiss' => 'modal'}= fa_icon 'times-circle'
+
+        .modal-body
+          %h4.bottom_20.left_20
+            Payment amount:
+            = fa_icon 'rub'
+            = number_to_currency(invoice.amount, unit: '')
+
+          %ol
+            %li You will be moved to the <a href='https://paysto.com' target='_blank'>Paysto</a> gateway site.
+            %li There you could pay desirable amount by different ways.
+            %li At the end you will be coming back to the our shop.
+
+          = hidden_field_tag 'PAYSTO_SUM', invoice.amount
+          = hidden_field_tag 'PAYSTO_INVOICE_ID', invoice.id
+          = hidden_field_tag 'PAYSTO_SHOP_ID', Paysto.id
+          = hidden_field_tag 'PAYSTO_DESC', Paysto.description
+          = hidden_field_tag 'PAYSTO_TTL', Paysto.pay_till
+
+        .modal-footer
+          %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'} Cancel
+          %button.btn.btn-success{type: 'submit'}
+            = fa_icon 'check-circle'
+            Pay now

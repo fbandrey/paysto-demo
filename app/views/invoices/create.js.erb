@@ -1,0 +1,9 @@
+<%- if @invoice && @invoice.persisted? -%>
+  $('.modal#payment_modal').remove();
+  $('body').append("<%= escape_javascript render(partial: 'invoices/modal', locals: {invoice: @invoice}) %>");
+  $('.modal#payment_modal').modal();
+<%- else -%>
+  alert('Something went wrong...');
+<%- end -%>
+
+$('.buy.btn').button('reset');

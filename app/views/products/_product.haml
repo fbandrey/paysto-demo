@@ -1,0 +1,19 @@
+.col-xs-4
+  .panel.panel-default
+    .panel-heading= product.name
+    .panel-body.text-center
+      = image_tag(product.image_url, height: 200)
+      
+      .top_10
+        Already paid
+        %mark.lead= product.payments.count
+        times.
+    .panel-footer.clearfix
+      .pull-left
+        %h4
+          = fa_icon 'rub'
+          = number_to_currency(product.price, unit: '')
+      .pull-right
+        %a.btn.btn-success.buy{href: 'javascript://', onClick: "buy(#{product.id}, this)", 'data-loading-text' => 'Wait...'}
+          = fa_icon 'check-circle'
+          Buy now

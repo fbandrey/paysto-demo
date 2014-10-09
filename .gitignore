@@ -28,6 +28,7 @@ public/uploads
 
 # Ignore generated schema in pdf
 /*.pdf
+config/secrets.yml
 
 # Ignore cache
 /public/admin/
@@ -67,6 +68,12 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 config/database.yml
+config/local_env.yml
+
+Capfile
+config/deploy.rb
+config/unicorn.rb
+config/deploy/*
 
 *.env
 .zeus.sock
