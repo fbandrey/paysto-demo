@@ -10,14 +10,14 @@
 
         .modal-body
           %h4.bottom_20.left_20
-            Payment amount:
+            Amount to be paid:
             = fa_icon 'rub'
             = number_to_currency(invoice.amount, unit: '')
 
           %ol
-            %li You will be moved to the <a href='https://paysto.com' target='_blank'>Paysto</a> gateway site.
-            %li There you could pay desirable amount by different ways.
-            %li At the end you will be coming back to the our shop.
+            %li You will be redirected to Paysto payment page.
+            %li When you are on Paysto, choose the payment method.
+            %li Once you have paid, you will automatically return to the shop.
 
           = hidden_field_tag 'PAYSTO_SUM', invoice.amount
           = hidden_field_tag 'PAYSTO_INVOICE_ID', invoice.id
