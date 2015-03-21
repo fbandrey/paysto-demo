@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141010221509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "invoice_notifications", force: true do |t|
+  create_table "invoice_notifications", force: :cascade do |t|
     t.integer  "invoice_id"
     t.text     "pay_data"
     t.datetime "created_at"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141010221509) do
 
   add_index "invoice_notifications", ["invoice_id"], name: "index_invoice_notifications_on_invoice_id", using: :btree
 
-  create_table "invoices", force: true do |t|
+  create_table "invoices", force: :cascade do |t|
     t.integer  "payment_id"
     t.float    "amount",     default: 0.0
     t.datetime "paid_at"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20141010221509) do
   add_index "invoices", ["payment_id"], name: "index_invoices_on_payment_id", using: :btree
   add_index "invoices", ["product_id"], name: "index_invoices_on_product_id", using: :btree
 
-  create_table "payments", force: true do |t|
+  create_table "payments", force: :cascade do |t|
     t.float    "amount",                 default: 0.0
     t.float    "real_amount"
     t.string   "gateway_code"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20141010221509) do
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
+  create_table "products", force: :cascade do |t|
     t.string   "name"
     t.float    "price"
     t.string   "image_url"
