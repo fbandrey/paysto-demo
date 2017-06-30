@@ -1,9 +1,10 @@
 !!!
 %html
   %head
-    %title Paysto Demo
+    %title Paysto Ruby on Rails demo shop
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    = favicon_link_tag '/favicon.ico', rel: 'shortcut icon'
     = csrf_meta_tags
   %body
     .jumbotron
@@ -12,9 +13,9 @@
           = fa_icon 'cog spin'
           = link_to 'Demo shop', root_path
         %p
-          Simple demo shop for Ruby on Rails applications and gem  
+          Simple demo shop for Ruby on Rails applications and gem
           = succeed '.' do
-            = link_to '«paysto-rails»', 'http://github.com/fbandrey/paysto-rails', target: '_blank'
+            = link_to '«paysto-rails»', 'https://github.com/fbandrey/paysto-rails', target: '_blank'
 
     .container.bottom_20
       = print_flash
@@ -24,10 +25,10 @@
       .alert.alert-info.lead
         = fa_icon 'github'
         Source code:
-        = link_to 'http://github.com/fbandrey/paysto-demo', 'http://github.com/fbandrey/paysto-demo', target: '_blank'
+        = link_to 'https://github.com/fbandrey/paysto-demo', 'https://github.com/fbandrey/paysto-demo', target: '_blank'
 
     .container.bottom_20.text-right
-      = link_to 'fbandrey', 'http://github.com/fbandrey', target: '_blank'
+      = link_to 'fbandrey', 'https://github.com/fbandrey', target: '_blank'
       ©
       = Time.zone.now.year
 

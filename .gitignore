@@ -7,9 +7,6 @@
 # Ignore RubyMine IDE files
 .idea
 
-# Ignore rbenv file
-.ruby-version
-
 # Ignore bundler config
 /.bundle
 

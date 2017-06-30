@@ -1,8 +1,8 @@
 Paysto.setup do |config|
 
   # === Put your real Paysto credentials here.
-  config.id          = '21771'
-  config.secret      = '2eN4Rs7fVFySTsHXexDUy1'
+  config.id          = '23677'
+  config.secret      = 'ffe303c8574d2ae4554693ba'
   config.description = 'Custom payment description'
 
   # === Paysto URLs.
@@ -15,14 +15,10 @@ Paysto.setup do |config|
 
   # === Paysto server IPs.
   config.ips = [
-    '66.226.72.66',
-    '66.226.74.225',
-    '66.226.74.226',
-    '66.226.74.227',
-    '66.226.74.228',
     '23.102.21.72',
+    '137.135.207.41',
     '23.102.17.162',
-    '137.135.207.41'
+    '168.61.92.150'
   ]
 
   # === Payments tax of your tariff plan in Paysto. Default onlineMerchant "All inclusive" is 5%.

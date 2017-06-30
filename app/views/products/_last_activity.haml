@@ -1,7 +1,11 @@
 %h2.bottom_20 Last activity
 
-- @payments.each do |payment|
-  %blockquote.blockquote-reverse.small
-    = payment.invoice.product.name
-    was paid at
-    = payment.created_at.strftime('%H:%M (%d.%m.%Y)')
+- if @payments.present?
+  - @payments.each do |payment|
+    %blockquote.blockquote-reverse.small
+      = payment.invoice.product.name
+      was paid at
+      = payment.created_at.strftime('%H:%M (%d.%m.%Y)')
+
+- else
+  %p Still no activity
